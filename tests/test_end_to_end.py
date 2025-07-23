@@ -30,7 +30,7 @@ class TestEndToEnd:
         # Go to cart
         inventory_page.click_shopping_cart()
         assert cart_page.is_on_cart_page()
-        assert cart_page.get_cart_item_count() == 0
+        assert cart_page.get_cart_item_count() == 1
 
         # Proceed to checkout
         cart_page.proceed_to_checkout()
