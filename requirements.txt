@@ -1,0 +1,5 @@
+playwright==1.43.0
+pytest-playwright
+python-dotenv
+pytest==7.4.3
+pytest-html==4.1.1
