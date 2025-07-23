@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # 🔧 pin to avoid Ubuntu 24.04 issues
 
     steps:
       - uses: actions/checkout@v4
@@ -24,13 +24,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # ✅ Safely installs all Playwright browser deps
-      - name: Install Playwright Browsers & System Dependencies
-        uses: microsoft/playwright-github-action@v1
-        with:
-          with-deps: true
+      - name: Install Playwright browsers & system dependencies
+        run: python -m playwright install --with-deps
 
-      - name: Run your tests
+      - name: Run tests
         run: pytest --tracing=retain-on-failure
 
       - uses: actions/upload-artifact@v4
