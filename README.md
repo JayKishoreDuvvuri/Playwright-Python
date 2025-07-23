@@ -2,7 +2,7 @@
 
 This project implements a comprehensive Page Object Model (POM) structure for testing [SauceDemo](https://www.saucedemo.com/) using Playwright with Python.
 
-#### Application Under Test
+## Application Under Test
 
 We are using https://www.saucedemo.com/ as the Application Under Test. This App is a **React.js** Frontend
 
